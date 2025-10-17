@@ -1,0 +1,21 @@
+{
+  "run_number": 2,
+  "date": "2025-10-11 17:40:31",
+  "hyperparameters": {
+    "dataset_size": 3500,
+    "epochs": 8,
+    "learning_rate": 1e-05,
+    "batch_size": 12,
+    "generation_temperature": 0.3,
+    "max_length": 384
+  },
+  "results": {
+    "final_train_loss": 2.2925338222555918,
+    "test_loss": 2.0423147678375244,
+    "perplexity": 7.70843179332973,
+    "rouge_1": 0.22346170225950024,
+    "rouge_2": 0.07724494736678496,
+    "rouge_l": 0.16519173664347514,
+    "training_time_minutes": 81.79060833333332
+  }
+}

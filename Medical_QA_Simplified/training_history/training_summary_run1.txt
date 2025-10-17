@@ -1,0 +1,93 @@
+
+================================================================================
+           MEDICAL Q&A FINE-TUNING - RUN #1 SUMMARY
+================================================================================
+
+📅 RUN INFORMATION:
+   Date: 2025-10-11 15:26:45
+   Device: mps
+   PyTorch: 2.8.0
+   Transformers: 4.55.4
+
+🎯 OBJECTIVE:
+   Fine-tune DistilGPT-2 to answer medical questions and demonstrate
+   understanding of the training process.
+
+📋 MODEL & DATA CHOICES:
+
+   Model: DistilGPT-2 (82M parameters)
+   Why? - Decoder architecture for text generation
+        - Efficient for training on M3 Pro
+        - Pre-trained on general text
+
+   Dataset: MedQuAD (Medical Q&A from NIH/CDC)
+   Size: 700 training / 150 validation / 150 test
+   Why? - High-quality medical information
+        - Q&A format perfect for instruction tuning
+        - Diverse medical topics
+
+⚙️ HYPERPARAMETERS (Run #1):
+
+   Learning Rate: 5e-05
+   Batch Size: 4 (effective: 8 with accumulation)
+   Epochs: 3
+   Max Length: 256 tokens
+   Weight Decay: 0.01
+   Warmup Steps: 50
+   Generation Temperature: 0.7
+
+📊 TRAINING RESULTS:
+
+   Training Time: 2.60 minutes
+   Final Training Loss: 2.3889
+   Samples/Second: 13.47
+
+   ✅ Loss decreased over training → Model learned!
+
+🎯 EVALUATION METRICS:
+
+   Test Loss: 2.0790
+   Perplexity: 8.00
+   → Lower perplexity = better predictions
+
+   ROUGE-1: 0.1988
+   ROUGE-2: 0.0817
+   ROUGE-L: 0.1543
+   → Measures similarity to reference answers
+
+   MMLU Benchmark: Check mmlu_results/results.json
+   → Standardized medical knowledge test
+
+📈 KEY INSIGHTS:
+
+1. Training Progress:
+   ✅ Loss decreased consistently across epochs
+   ✅ Validation loss tracked training loss (no overfitting)
+   ✅ Model converged successfully
+
+2. Performance Metrics:
+   • Perplexity of 8.00 indicates good language modeling
+   • ROUGE-1 of 0.1988 shows baseline similarity to references
+
+3. What I Learned About Training:
+   • Proper data splitting prevents leakage (train/val/test)
+   • Monitoring validation loss prevents overfitting
+   • Hyperparameters significantly impact training
+   • Loss curves visualize the learning process
+   • Multiple metrics give fuller picture of performance
+
+4. Model Limitations:
+   ⚠️ Should not replace professional medical advice
+   ⚠️ May occasionally generate incorrect information
+   ⚠️ Limited by training data diversity (700 examples)
+   ⚠️ Context length restricted to 256 tokens
+
+5. Future Improvements:
+   • Increase dataset size
+   • Train for more epochs
+   • Lower learning rate
+   • Reduce temperature
+
+================================================================================
+                          END OF SUMMARY - RUN #1
+================================================================================

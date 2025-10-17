@@ -1,0 +1,85 @@
+
+
+================================================================================
+           MEDICAL Q&A FINE-TUNING - RUN #10 SUMMARY
+================================================================================
+
+📅 RUN INFORMATION:
+   Date: 2025-10-15 20:17:55
+   Device: mps
+   PyTorch: 2.8.0
+   Transformers: 4.55.4
+
+🎯 OBJECTIVE:
+   Fine-tune DistilGPT-2 to answer medical questions and demonstrate
+   understanding of the training process.
+
+📋 MODEL & DATA CHOICES:
+
+   Model: DistilGPT-2 (82M parameters)
+   Why? - Decoder architecture for text generation
+        - Efficient for training on M3 Pro
+        - Pre-trained on general text
+
+   Dataset: MedQuAD (Medical Q&A from NIH/CDC)
+   Size: 7000 training / 1500 validation / 1500 test
+   Why? - High-quality medical information
+        - Q&A format perfect for instruction tuning
+        - Diverse medical topics
+
+⚙️ HYPERPARAMETERS (Run #10):
+
+   Learning Rate: 7e-05
+   Batch Size: 20 (effective: 80 with accumulation)
+   Epochs: 12
+   Max Length: 256 tokens
+   Weight Decay: 0.01
+   Warmup Ratio: 0.1
+   Generation Temperature: 0.3
+
+📊 TRAINING RESULTS:
+
+   Training Time: 86.96 minutes
+   Final Training Loss: 1.8207
+   Samples/Second: 16.10
+
+   ✅ Loss decreased over training → Model learned!
+
+🎯 EVALUATION METRICS:
+
+   Test Loss: 1.7069
+   Perplexity: 5.51
+   → Lower perplexity = better predictions
+
+   ROUGE-1: 0.3005
+   ROUGE-2: 0.1324
+   ROUGE-L: 0.2166
+   → Measures similarity to reference answers
+
+📈 KEY INSIGHTS:
+
+1. Training Progress:
+   ✅ Loss decreased consistently across epochs
+   ✅ Model converged successfully
+
+2. Performance Metrics:
+   • Perplexity of 5.51 indicates good language modeling
+   • ROUGE-1 of 0.3005 shows baseline similarity to references
+
+3. What I Learned About Training:
+   • Proper data splitting prevents leakage (train/val/test)
+   • Monitoring validation loss prevents overfitting
+   • Hyperparameters significantly impact training
+   • Loss curves visualize the learning process
+   • Multiple metrics give fuller picture of performance
+
+4. Model Limitations:
+   ⚠️ Should not replace professional medical advice
+   ⚠️ May occasionally generate incorrect information
+   ⚠️ Limited by training data diversity (7000 examples)
+   ⚠️ Context length restricted to 256 tokens
+
+================================================================================
+                          END OF SUMMARY - RUN #10
+================================================================================
+
